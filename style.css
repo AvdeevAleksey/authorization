@@ -1,0 +1,279 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --body-background: rgb(238, 238, 238);
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --text-color-blue: #428EFF;
+    --text-color-grey: #424242;
+    --separator-color: #A8A8A8;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-background: rgb(70, 70, 70);
+        --background-color: #000000;
+        --text-color: #ffffff;
+        --text-color-blue: #75ACFF;
+        --text-color-grey: #424242;
+        --separator-color: #A8A8A8;
+    }
+}
+
+body {
+    position: relative;
+    background: var(--body-background);
+}
+
+body.dark-theme {
+    --body-background: rgb(34, 34, 34);
+    --background-color: #424242;;
+    --text-color: #ffffff;
+    --text-color-blue: #75ACFF;
+    --text-color-grey: #424242;
+    --separator-color: #A8A8A8;
+}
+
+/* Окно "Регистрации" Light */
+.container {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 400px;
+    height: 650px;
+    background: var(--background-color);
+    border-radius: 30px;    
+}
+
+/* Текст в шапке */
+.header {
+    position: absolute;
+    width: 274px;
+    height: 66px;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Создание WEB ID */
+.c_id {
+    position: absolute;
+    width: 260px;
+    height: 36px;
+    margin-top: 0;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    color: var(--text-color);
+}
+
+/* Уже есть WEB ID? */
+.h_id {
+    position: absolute;
+    width: 132px;
+    height: 18px;
+    left: 0;
+    top: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--text-color);
+}
+
+/* Найти его здесь > */
+.f_id {
+    position: absolute;
+    width: 134px;
+    height: 18px;
+    right: 0;
+    top: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--text-color-blue);
+}
+
+.forget_id {
+    position: absolute;
+    width: 120px;
+    height: 18px;
+    left: calc(50% - 120px/2 - 5px);
+    top: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--text-color-blue);
+}
+
+.form-field {
+    box-sizing: border-box;
+    position: absolute;
+    width: 275px;
+    height: 45px;
+    left: calc(50% - 275px/2 - 0.5px);
+    border: 0.5px solid VAR(--text-color-grey);
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--text-color-grey);
+    padding: 0 16px 0 16px;
+}
+/* Поле "Имя" */
+.name {
+    top: 114px;
+}
+
+/* Поле "Фамилиия" */
+.surname {
+    top: 171px;
+}
+
+/* Поле "Дата рождения" */
+.born {
+    top: 242px;
+}
+
+/* Поле "Страна" */
+.country {
+    top: 299px;
+    background: #ffffff;
+}
+
+/* Поле "Почта" */
+.email {
+    top: 356px;
+}
+
+.email_enter {
+    top: 115px;
+}
+
+/* Поле "Пароль" */
+.pass {
+    top: 429px;
+}
+
+.pass_enter {
+    top: 183px;
+}
+
+/* Поле "Повторить пароль" */
+.r_pass {
+    top: 487px;
+}
+
+.btn_next {
+    top: 565px;
+    background: var(--text-color-blue);
+    color: #ffffff;
+    border: 0;
+}
+
+    /* Кнопка "Войти" */
+.btn_enter {
+    top: 357px;
+    background: var(--text-color-blue);
+    color: #ffffff;
+    border: 0;
+}
+
+.btn_toggle {
+    height: 30px;
+    bottom: 0;
+    background: var(--background-color);
+    color: var(--text-color);
+    border: 0;
+}
+
+/* Разделители */
+.separator {
+    position: absolute;
+    width: 343.02px;
+    height: 0px;
+    left: calc(50% - 343.02px/2 - 1.49px);
+    border: 1px solid var(--separator-color);
+}
+
+/* Разделитель№1 */
+.s1 {
+    top: 220px;
+}
+/* Разделитель№2 */
+.s2 {
+    top: 406px;
+}
+
+.or {
+    position: absolute;
+    width: 34px;
+    height: 18px;
+    left: calc(50% - 46px/2 + 6px);
+    top: 246px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--text-color);
+}
+
+    /* Иконик соц.сетей */
+    .icons {
+        position: absolute;
+        width: 208px;
+        height: 50px;
+        top: 314px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex; /* Используем flexbox */
+        justify-content: space-between; /* Распределяет элементы по горизонтали */
+        align-items: center; /* Центрирует элементы по вертикали */
+        overflow: hidden; /* Prevents overflow */
+    }
+    
+/* .icons {
+    position: absolute;
+    width: 208px;
+    height: 50px;
+    top: 314px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+    /* VK Circled */
+.vk {
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background: url('https://img.icons8.com/?size=48&id=114452&format=png');
+}
+
+    /* Telegram App */
+.tg {
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background: url('https://img.icons8.com/?size=48&id=63306&format=png');
+}
+    /* Instagram Circle */
+.inst {
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background: url('https://img.icons8.com/?size=48&id=32323&format=png');
+}    
+    
