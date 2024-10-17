@@ -35,15 +35,17 @@ Class Actions extends Database{
         if ($login['status'] == 'success') {
                 $_SESSION['success_msg'] = "Успешная авторизация.";
                 // Переход на страницу сервиса
-                // header("location: ./");
+                // header("location: http://ya.ru");
                 // exit;
             } else {
                 $_SESSION['error_msg'] = "Неверные учетные данные.";
-                // header("location: ./login.php");
+                // header("location: ./register.php");
         }
         $data = [];
         foreach($_POST as $k => $v){
-            $data[$k] = $v;
+            if($k != "btn_enter") {
+                $data[$k] = $v;
+            }
         }
     }
 

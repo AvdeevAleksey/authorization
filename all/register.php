@@ -4,20 +4,18 @@
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if(empty($_POST['id'])){
             $action->insert_member(); 
-        }else{
-            $action->update_member(); 
         }
     }
-    if(isset($_GET['action'])){
-        switch($_GET['action']){
-            case 'edit':
-                $data = $action->get_member_by_id($_GET['id']);
-                break;
-            case 'delete':
-                $data = $action->delete_member($_GET['id']);
-                break;
-        }
-    }
+    // if(isset($_GET['action'])){
+    //     switch($_GET['action']){
+    //         case 'edit':
+    //             $data = $action->get_member_by_id($_GET['id']);
+    //             break;
+    //         case 'delete':
+    //             $data = $action->delete_member($_GET['id']);
+    //             break;
+    //     }
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -28,11 +26,17 @@
 </head>
 <body>
     <form action="" method="POST">
-        <?php if(isset($_SESSION['form_error_msg'])): ?>
-            <div class="alert alert-danger rounded-0">
-                <?= $_SESSION['form_error_msg'] ?>
+        <?php if(isset($_SESSION['success_msg'])): ?>
+            <div class="alert alert-success rounded-0">
+                <?= $_SESSION['success_msg'] ?>
             </div>
-        <?php unset($_SESSION['form_error_msg']); ?>
+        <?php unset($_SESSION['success_msg']); ?>
+        <?php endif; ?>
+        <?php if(isset($_SESSION['error_msg'])): ?>
+            <div class="alert alert-danger rounded-0">
+                <?= $_SESSION['error_msg'] ?>
+            </div>
+        <?php unset($_SESSION['error_msg']); ?>
         <?php endif; ?>
         <input type="hidden" name="id" value="<?= isset($data['id']) ? $data['id'] : '' ?>">
         <input type="text" id="username" name="username" placeholder="Имя пользователя"  value="<?= isset($data['username']) ? $data['username'] : '' ?>" required="required">
